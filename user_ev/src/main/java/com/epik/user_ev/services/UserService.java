@@ -22,16 +22,46 @@ public class UserService {
         return userRepository.findAll().stream().map(user -> mapper.toDto(user)).collect(Collectors.toList());
     }
 
-    public Boolean saveUser(UserDto user) {
+    public UserDto findById(Long id) {
         try {
-            userRepository.save(mapper.toEntity(user));
-            return true;
-        } catch (Exception e) {
-            return false;
+            var entity = userRepository.findById(id);
+            if (entity.isPresent()){
+                return mapper.toDto(entity.get());
+            }else {
+                return null;
+            }
+        }catch (Exception e){
+            return null;
         }
     }
 
-    public UserDto findByEmail(UserDto user) {
-        return mapper.toDto(userRepository.findByEmail(user.getEmail()));
+    public UserDto saveUser(UserDto user) {
+        try {
+            var entity = userRepository.save(mapper.toEntity(user));
+            return mapper.toDto(entity);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public UserDto updateUser(UserDto user) {
+        try {
+            var entity = userRepository.getOne(user.getId());
+            entity.setName(user.getName());
+            entity.setLastName(user.getLastName());
+            entity.setEmail(user.getEmail());
+            return mapper.toDto(userRepository.save(entity));
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public Boolean deleteById(Long id) {
+        try {
+            userRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 }

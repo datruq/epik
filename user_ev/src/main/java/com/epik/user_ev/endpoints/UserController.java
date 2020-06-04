@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -23,25 +24,49 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, produces =
             MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserDto> saveUser(@RequestBody UserDto user, HttpServletRequest request) {
-        if (userService.saveUser(user)){
-            return new ResponseEntity<UserDto>(new UserDto(), HttpStatus.OK);
+    public ResponseEntity<HttpStatus> saveUser(@RequestBody UserDto user, HttpServletRequest request) {
+        if (null != userService.saveUser(user)){
+            return new ResponseEntity<>(HttpStatus.OK);
         }else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, produces =
+            MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<HttpStatus> updateUser(@RequestBody UserDto user, HttpServletRequest request) {
+        if (null != userService.updateUser(user)){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE, produces =
+            MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<HttpStatus> deleteUser(@PathVariable Long userId, HttpServletRequest request) {
+        if (userService.deleteById(userId)){
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET, produces =
             MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDto> getUserById(@PathVariable Long userId, HttpServletRequest request) {
-        return new ResponseEntity<UserDto>(new UserDto(), HttpStatus.OK);
+        UserDto response = userService.findById(userId);
+        if (null != response){
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces =
+    @RequestMapping(method = RequestMethod.GET, produces =
             MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Boolean> getAllUsers(HttpServletRequest request) {
-
-        return new ResponseEntity<>(true, HttpStatus.OK);
+    public ResponseEntity<List<UserDto>> getAllUsers(HttpServletRequest request) {
+        return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
 }

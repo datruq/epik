@@ -2,11 +2,21 @@ package com.epik.user_ev.dto;
 
 public class UserDto {
 
+    private Long id;
+
     private String name;
 
     private String lastName;
 
     private String email;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public void setName(String name) {
         this.name = name;
