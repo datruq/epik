@@ -1,5 +1,6 @@
 package com.epik.user_ev.endpoints;
 
+import com.epik.user_ev.domains.Ev;
 import com.epik.user_ev.dtos.UserDto;
 import com.epik.user_ev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/user")

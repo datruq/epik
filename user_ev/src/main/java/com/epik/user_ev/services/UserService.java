@@ -1,5 +1,6 @@
 package com.epik.user_ev.services;
 
+import com.epik.user_ev.domains.Ev;
 import com.epik.user_ev.dtos.UserDto;
 import com.epik.user_ev.mappers.EvMapper;
 import com.epik.user_ev.mappers.UserMapper;
@@ -7,7 +8,9 @@ import com.epik.user_ev.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service

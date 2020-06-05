@@ -69,6 +69,11 @@ Alternatively to curl, you can use Postman to target the REST API.
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllEvs.png)
 
 
+**Postman find out which are the best-selling!**
+
+![alt text](https://github.com/datruq/epik/blob/master/img/getMostPopularModels.png)
+
+
 ## Built With
 
 * [Spring](https://spring.io/) - The web framework used
