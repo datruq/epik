@@ -60,39 +60,46 @@ With this Epik app we can get:
 Alternatively to curl, you can use Postman to target the REST API.
 
 
-**Get all**
+**Get all users**
 
 [GET] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllUsers.png)
 
-**Create**
+**Create user**
 
 [POST] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/createUser.jpg)
 
-**Update**
+**Update user**
 
 [PUT] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/updateUser.jpg)
 
-**Delete**
+**Delete user**
 
 [DELETE] http://localhost:8080/users/{userId}
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/deleteUser.jpg)
 
 
-**Postman Evs**
+**Get all Evs**
 
 [GET] http://localhost:8080/ev/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllEvs.png)
 
+**Get Evs by Id**
 
-**Postman find out which are the best-selling models!**
+[GET] http://localhost:8080/ev/{evId}
+
+![alt text](https://github.com/datruq/epik/blob/master/img/getByIdEvs.png)
+
+
+
+**Find out which are the best-selling models!**
 
 [GET] http://localhost:8080/ev/findMostPopularEv/
 
