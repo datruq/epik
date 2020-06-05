@@ -1,4 +1,4 @@
-package com.epik.user_ev.dto;
+package com.epik.user_ev.dtos;
 
 public class UserDto {
 

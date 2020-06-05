@@ -1,6 +1,6 @@
 package com.epik.user_ev.endpoints;
 
-import com.epik.user_ev.dto.UserDto;
+import com.epik.user_ev.dtos.UserDto;
 import com.epik.user_ev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

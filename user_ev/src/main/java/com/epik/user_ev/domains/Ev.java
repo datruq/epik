@@ -1,8 +1,7 @@
-package com.epik.user_ev.domain;
+package com.epik.user_ev.domains;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;

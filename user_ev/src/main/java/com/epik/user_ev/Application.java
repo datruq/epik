@@ -1,7 +1,7 @@
 package com.epik.user_ev;
 
 import com.epik.user_ev.endpoints.UserController;
-import com.epik.user_ev.mapper.UserMapper;
+import com.epik.user_ev.mappers.UserMapper;
 import com.epik.user_ev.persistence.UserRepository;
 import com.epik.user_ev.services.UserService;
 import org.springframework.boot.SpringApplication;

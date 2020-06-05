@@ -1,8 +1,8 @@
-package com.epik.user_ev.mapper;
+package com.epik.user_ev.mappers;
 
-import com.epik.user_ev.domain.Ev;
-import com.epik.user_ev.dto.EvDto;
-import com.epik.user_ev.dto.UserDto;
+import com.epik.user_ev.domains.Ev;
+import com.epik.user_ev.dtos.EvDto;
+import com.epik.user_ev.dtos.UserDto;
 import com.epik.user_ev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

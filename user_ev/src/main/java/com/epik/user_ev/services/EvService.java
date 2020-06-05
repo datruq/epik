@@ -1,8 +1,8 @@
 package com.epik.user_ev.services;
 
-import com.epik.user_ev.domain.Ev;
-import com.epik.user_ev.dto.EvDto;
-import com.epik.user_ev.mapper.EvMapper;
+import com.epik.user_ev.domains.Ev;
+import com.epik.user_ev.dtos.EvDto;
+import com.epik.user_ev.mappers.EvMapper;
 import com.epik.user_ev.persistence.EvRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

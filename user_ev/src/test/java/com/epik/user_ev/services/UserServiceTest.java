@@ -1,9 +1,8 @@
 package com.epik.user_ev.services;
 
-import com.epik.user_ev.domain.Ev;
-import com.epik.user_ev.domain.User;
-import com.epik.user_ev.dto.EvDto;
-import com.epik.user_ev.dto.UserDto;
+import com.epik.user_ev.domains.Ev;
+import com.epik.user_ev.dtos.EvDto;
+import com.epik.user_ev.dtos.UserDto;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -26,7 +25,7 @@ public class UserServiceTest {
     private UserDto user;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         ev = new EvDto();
         ev.setModel(Ev.MODEL.BUS.ordinal());
         ev.setBatteryCapacity(Ev.BATTERY_CAPACITY.SEVENTY_KWH.ordinal());
@@ -41,7 +40,8 @@ public class UserServiceTest {
     }
 
     @Test
-    public void crudTest(){
+    public void crudTest() {
+
         UserDto fromDB = userService.saveUser(user);
         Assert.assertEquals(fromDB.getName(), user.getName());
         Assert.assertEquals(fromDB.getLastName(), user.getLastName());
