@@ -13,23 +13,23 @@ Case study for nuvve
 
 First we need to clone the project
 
-````git clone https://github.com/datruq/epik.git````
+````git clone git@github.com:datruq/epik.git````
 
-When it finished clonning and have it in your local machine, just open it with IntelliJ IDE and import all the dependencies with Maven
+When it finished clonning and have it in your local machine, just open it with your preferred IDE and import all the dependencies with Maven
 
 ## Create Database and tables
 
-1. Create a new data base on your postgres. I call it mine "epik"
-2. Excecute the user.sql and ev.sql queries. Those are inside the folder "sql"
+1. Create a new data base on your local postgreSQL. In this case I named it "epik"
+2. Excecute the user.sql and ev.sql queries to create both tables. Those are inside the "sql" folder
   
 ## Building and running this application
 
 1. Open a command line window or terminal.
 2. Navigate to the root directory of the project, where the pom.xml resides.
-3. Compile the project: ```mvn clean build ```.
-4. Change into the target directory: cd build/libs
-5. You should see the file name: epik-app-1.0.jar.
-6. Execute the JAR: ``` java -jar epik-app-1.0.jar```.
+3. Compile the project: ```mvn clean install -pl user_ev ```.
+4. Change into the target directory: user_ev/target/. Or you can use the one already generated inside the "jars" folder
+5. You should see the file name: user_ev-0.0.1-SNAPSHOT.jar.
+6. Execute the JAR: ``` java -user_ev-0.0.1-SNAPSHOT.jar```.
 7. The application should be available at http://localhost:8080/.
 
 ## REST API overview
