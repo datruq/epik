@@ -60,19 +60,25 @@ With this Epik app we can get:
 Alternatively to curl, you can use Postman to target the REST API.
 
 
-**Postman users**
+**Get all**
 
 [GET] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllUsers.png)
 
+**Create**
+
 [POST] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/createUser.jpg)
 
+**Update**
+
 [PUT] http://localhost:8080/users/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/updateUser.jpg)
+
+**Delete**
 
 [DELETE] http://localhost:8080/users/{userId}
 
