@@ -27,7 +27,7 @@ When it finished clonning and have it in your local machine, just open it with y
 1. Open a command line window or terminal.
 2. Navigate to the root directory of the project, where the pom.xml resides.
 3. Compile the project: ```mvn clean install -pl user_ev ```.
-4. Change into the target directory: user_ev/target/. Or you can use the one already generated inside the "jars" folder
+4. Change into the target directory: user_ev/target/  Or you can use the one already generated inside the "jars" folder
 5. You should see the file name: user_ev-0.0.1-SNAPSHOT.jar.
 6. Execute the JAR: ``` java -user_ev-0.0.1-SNAPSHOT.jar```.
 7. The application should be available at http://localhost:8080/.
@@ -73,7 +73,7 @@ Alternatively to curl, you can use Postman to target the REST API.
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllEvs.png)
 
 
-**Postman find out which are the best-selling!**
+**Postman find out which are the best-selling models!**
 
 [GET] http://localhost:8080/ev/findMostPopularEv/
 
