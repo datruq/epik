@@ -10,6 +10,16 @@ public class UserDto {
 
     private String email;
 
+    private Long evId;
+
+    public Long getEvId() {
+        return evId;
+    }
+
+    public void setEvId(Long evId) {
+        this.evId = evId;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

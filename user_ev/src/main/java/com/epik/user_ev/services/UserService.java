@@ -1,6 +1,7 @@
 package com.epik.user_ev.services;
 
 import com.epik.user_ev.dto.UserDto;
+import com.epik.user_ev.mapper.EvMapper;
 import com.epik.user_ev.mapper.UserMapper;
 import com.epik.user_ev.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class UserService {
     @Autowired
     private UserMapper mapper;
 
+    @Autowired
+    private EvMapper evMapper;
+
     public List<UserDto> findAll() {
         return userRepository.findAll().stream().map(user -> mapper.toDto(user)).collect(Collectors.toList());
     }
@@ -25,12 +29,12 @@ public class UserService {
     public UserDto findById(Long id) {
         try {
             var entity = userRepository.findById(id);
-            if (entity.isPresent()){
+            if (entity.isPresent()) {
                 return mapper.toDto(entity.get());
-            }else {
+            } else {
                 return null;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
@@ -60,8 +64,13 @@ public class UserService {
         try {
             userRepository.deleteById(id);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
+
+    public List<UserDto> findAllByEvId(Long evId) {
+        return userRepository.findAllByEvId(evId).stream().map(user -> mapper.toDto(user)).collect(Collectors.toList());
+    }
+
 }
