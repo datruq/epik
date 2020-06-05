@@ -62,14 +62,20 @@ Alternatively to curl, you can use Postman to target the REST API.
 
 **Postman find all users**
 
+[GET] http://localhost:8080/users/
+
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllUsers.png)
 
 **Postman find all Evs**
+
+[GET] http://localhost:8080/ev/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/findAllEvs.png)
 
 
 **Postman find out which are the best-selling!**
+
+[GET] http://localhost:8080/ev/findMostPopularEv/
 
 ![alt text](https://github.com/datruq/epik/blob/master/img/getMostPopularModels.png)
 
