@@ -20,7 +20,8 @@
 	</properties>
 	<modules>
 	    <module>user_ev</module>
-	</modules>
+        <module>gateway</module>
+    </modules>
 
 	<dependencies>
 		<dependency>
