@@ -18,6 +18,7 @@ public class EvService {
     private static final String TOTAL_OF_BUSES_HAVE_BOUGHT = "TotalOfBusesHaveBought";
     private static final String TOTAL_OF_CARS_HAVE_BOUGHT = "TotalOfCarsHaveBought";
     private static final String TOTAL_OF_SCOOTERS_HAVE_BOUGHT = "TotalOfScootersHaveBought";
+
     @Autowired
     private EvRepository evRepository;
 

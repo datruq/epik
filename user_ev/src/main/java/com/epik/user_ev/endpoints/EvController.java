@@ -1,6 +1,5 @@
 package com.epik.user_ev.endpoints;
 
-import com.epik.user_ev.domains.Ev;
 import com.epik.user_ev.dtos.EvDto;
 import com.epik.user_ev.services.EvService;
 import org.springframework.beans.factory.annotation.Autowired;

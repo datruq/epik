@@ -1,6 +1,5 @@
 package com.epik.user_ev.endpoints;
 
-import com.epik.user_ev.domains.Ev;
 import com.epik.user_ev.dtos.UserDto;
 import com.epik.user_ev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -27,9 +25,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST, produces =
             MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HttpStatus> saveUser(@RequestBody UserDto user, HttpServletRequest request) {
-        if (null != userService.saveUser(user)){
+        if (null != userService.saveUser(user)) {
             return new ResponseEntity<>(HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
@@ -37,9 +35,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.PUT, produces =
             MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HttpStatus> updateUser(@RequestBody UserDto user, HttpServletRequest request) {
-        if (null != userService.updateUser(user)){
+        if (null != userService.updateUser(user)) {
             return new ResponseEntity<>(HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
@@ -47,9 +45,9 @@ public class UserController {
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE, produces =
             MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HttpStatus> deleteUser(@PathVariable Long userId, HttpServletRequest request) {
-        if (userService.deleteById(userId)){
+        if (userService.deleteById(userId)) {
             return new ResponseEntity<>(HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -58,9 +56,9 @@ public class UserController {
             MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDto> getUserById(@PathVariable Long userId, HttpServletRequest request) {
         UserDto response = userService.findById(userId);
-        if (null != response){
+        if (null != response) {
             return new ResponseEntity<>(response, HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

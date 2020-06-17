@@ -8,35 +8,35 @@ public class EvDto {
     private int batteryCapacity;
     private List<UserDto> userDtos;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setModel(int model) {
-        this.model = model;
-    }
-
-    public void setBatteryCapacity(int batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
-    }
-
-    public void setUserDtos(List<UserDto> userDtos) {
-        this.userDtos = userDtos;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getModel() {
         return model;
     }
 
+    public void setModel(int model) {
+        this.model = model;
+    }
+
     public int getBatteryCapacity() {
         return batteryCapacity;
     }
 
+    public void setBatteryCapacity(int batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
     public List<UserDto> getUserDtos() {
         return userDtos;
+    }
+
+    public void setUserDtos(List<UserDto> userDtos) {
+        this.userDtos = userDtos;
     }
 }
