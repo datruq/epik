@@ -32,6 +32,14 @@ When it finished clonning and have it in your local machine, just open it with y
 6. Execute the JAR: ``` java -user_ev-0.0.1-SNAPSHOT.jar```.
 7. The application should be available at http://localhost:8080/.
 
+## Building and running this application with Docker
+
+1. Open a command line window or terminal.
+2. Navigate to the root directory of the project, where the pom.xml resides.
+3. Compile the project: ```mvn clean install package -pl user_ev ```.
+4. Build the docker image with the command `docker build -t nuvve .`
+5. Run a docker container with the previus image `docker run -p 8090:8080 nuvve `
+
 ## REST API overview
 
 With this Epik app we can get:
